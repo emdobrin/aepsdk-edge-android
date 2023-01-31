@@ -30,6 +30,9 @@ android {
 }
 
 dependencies {
-    implementation project(':edge')
-    implementation "com.adobe.marketing.mobile:core:${rootProject.mavenCoreVersion}"
+    implementation ('com.adobe.marketing.mobile:edge:2.+') {
+        transitive = false
+    }
+    implementation fileTree(dir: 'libs', include: ['core-phone-release.aar'])
+    //implementation "com.adobe.marketing.mobile:core:${rootProject.mavenCoreVersion}"
 }
